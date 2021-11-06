@@ -1,0 +1,13 @@
+@media (max-width: 500px) {
+   html {
+      font-size: 10px;
+   }
+}
+* {
+   box-sizing: border-box;
+}
+.custom-shape-divider-top-1636166233 {
+   width: 100%;
+   background-color: #b39cd0;
+   height: 4.5vw;
+}
