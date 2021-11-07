@@ -46,8 +46,8 @@ const App = () => {
                   `}
                >
                   <Routes>
-                     <Route path="/itemList" element={<ItemList />} />
-                     <Route path="/bucket" element={<ItemList />} />
+                     <Route path="/itemList" element={<ItemList whatList="apiList" />} />
+                     <Route path="/bucket" element={<ItemList whatList="bucketList" />} />
                   </Routes>
                </main>
             </div>

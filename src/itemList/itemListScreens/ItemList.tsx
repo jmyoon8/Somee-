@@ -5,8 +5,13 @@ import CategoryList from "../itemListComponents/CategoryList";
 import CategoryItemList from "../itemListComponents/CategoryItemList";
 import { useDispatch } from "react-redux";
 import { getCategorys } from "../../Redux/actions";
+import BucketList from "../itemListComponents/BucketList";
 
-function ItemList() {
+interface ItemListProps {
+   whatList: "apiList" | "bucketList";
+}
+
+function ItemList({ whatList }: ItemListProps) {
    const [apiList, setApiList] = useState<Categorys[]>([]);
    const [selectedCategory, setSelectedCategory] = useState(-1);
    const dispatch = useDispatch();
@@ -35,17 +40,18 @@ function ItemList() {
                flex-wrap: wrap;
             `}
          >
-            {apiList.map(({ id, name }) => (
-               <CategoryList
-                  setSelectedCategory={setSelectedCategory}
-                  selectedCategory={selectedCategory}
-                  key={id}
-                  item={{ id, name }}
-               />
-            ))}
+            {whatList === "apiList" &&
+               apiList.map(({ id, name }) => (
+                  <CategoryList
+                     setSelectedCategory={setSelectedCategory}
+                     selectedCategory={selectedCategory}
+                     key={id}
+                     item={{ id, name }}
+                  />
+               ))}
          </div>
-
-         <CategoryItemList categoryId={selectedCategory} />
+         {whatList === "apiList" && <CategoryItemList categoryId={selectedCategory} />}
+         {whatList === "bucketList" && <BucketList />}
       </div>
    );
 }

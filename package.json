@@ -25,6 +25,7 @@
       "redux-promise-middleware": "^6.1.2",
       "redux-thunk": "^2.4.0",
       "typescript": "^4.4.4",
+      "uuid": "^8.3.2",
       "web-vitals": "^1.1.2"
    },
    "scripts": {
@@ -53,6 +54,7 @@
    },
    "devDependencies": {
       "@types/redux-logger": "^3.0.9",
-      "@types/redux-promise": "^0.5.29"
+      "@types/redux-promise": "^0.5.29",
+      "@types/uuid": "^8.3.1"
    }
 }
