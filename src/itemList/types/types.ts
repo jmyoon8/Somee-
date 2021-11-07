@@ -15,8 +15,12 @@ export interface PagingProps {
    pageBloks: any[];
    currentPage: number;
 }
+export interface ItemListProps {
+   whatList: "apiList" | "bucketList";
+}
 // state Type
 export type Categorys = { id: number; name: string };
+
 export type ProductType = {
    name: string;
    brand: Categorys;

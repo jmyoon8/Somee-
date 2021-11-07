@@ -1,16 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { css } from "@emotion/react";
-import { Categorys } from "../types/types";
+import { Categorys, ItemListProps } from "../types/types";
 import CategoryList from "../itemListComponents/CategoryList";
 import CategoryItemList from "../itemListComponents/CategoryItemList";
 import { useDispatch } from "react-redux";
 import { getCategorys } from "../../Redux/actions";
 import BucketList from "../itemListComponents/BucketList";
 import { Outlet, useMatch } from "react-router";
-
-interface ItemListProps {
-   whatList: "apiList" | "bucketList";
-}
 
 function ItemList({ whatList }: ItemListProps) {
    const [apiList, setApiList] = useState<Categorys[]>([]);
