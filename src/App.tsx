@@ -16,6 +16,7 @@ import "./Css.css";
 import ItemList from "./ItemList/itemListScreens/ItemList";
 import SideBar from "./Main/SideBar";
 import Header from "./Main/Header";
+import ItemDetail from "./ItemList/itemListComponents/ItemDetail";
 
 const App = () => {
    return (
@@ -24,7 +25,7 @@ const App = () => {
             css={css`
                flex-direction: column;
                display: flex;
-               flex: 1;
+               min-height: 100%;
             `}
          >
             <Header />
@@ -32,22 +33,25 @@ const App = () => {
                css={css`
                   display: flex;
                   flex-direction: row;
-                  align-items: center;
-                  flex: 1;
                `}
             >
                <SideBar />
-
                <main
                   css={css`
                      display: flex;
                      flex: 8;
-                     height: 100vh;
                   `}
                >
                   <Routes>
-                     <Route path="/itemList" element={<ItemList whatList="apiList" />} />
-                     <Route path="/bucket" element={<ItemList whatList="bucketList" />} />
+                     <Route path="/">
+                        <Route path="itemList" element={<ItemList whatList="apiList" />}>
+                           <Route path="detail" element={<ItemDetail />} />
+                        </Route>
+                        <Route
+                           path="bucket"
+                           element={<ItemList whatList="bucketList" />}
+                        />
+                     </Route>
                   </Routes>
                </main>
             </div>

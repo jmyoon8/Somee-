@@ -40,8 +40,6 @@ function BucketList() {
       const totalCount = TotalBucket.length;
       let maxPage = Math.floor(totalCount / 10);
       if (maxPage % 10 > 0) maxPage = maxPage + 1;
-      console.log("여기탐??");
-      console.log(maxPage, currentPage);
       let pageCount = maxPage;
       const start = currentPage === 1 ? 0 : (currentPage - 1) * paging.pageSize;
       const number = totalCount - (currentPage - 1) * paging.pageSize;
@@ -112,6 +110,8 @@ function BucketList() {
             display: flex;
             flex-direction: column;
             flex: 0.9;
+            min-height: 100%;
+            border: 1px solid black;
          `}
       >
          장바구니 목록
@@ -138,7 +138,7 @@ function BucketList() {
                justify-content: center;
                max-height: 100%;
                padding-top: 15px;
-               margin-bottom: 20px;
+               margin-bottom: 20px; ;
             `}
          >
             {itemList.map((item, index) => {

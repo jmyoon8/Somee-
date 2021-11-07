@@ -22,3 +22,14 @@ export function getCategoryItems(page: number, categoryID: number): any {
       },
    };
 }
+export function getDetailItem(prefix: string): any {
+   return {
+      type: GET_CATEGORY_ITEMS,
+      payload: async () => {
+         const data = await ApiInstance.get(
+            `https://mock-api.ssomee.com/products/${prefix}`
+         );
+         return data.data;
+      },
+   };
+}

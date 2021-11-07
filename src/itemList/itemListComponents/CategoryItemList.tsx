@@ -109,6 +109,7 @@ function CategoryItemList({ categoryId }: CategoryItemListProps) {
             display: flex;
             flex-direction: column;
             flex: 0.9;
+            min-height: 85vh;
          `}
       >
          {itemList.category.name} 목록

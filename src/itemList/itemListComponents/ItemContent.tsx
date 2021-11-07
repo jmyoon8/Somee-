@@ -1,5 +1,7 @@
 import { css } from "@emotion/react";
+import axios from "axios";
 import React, { useEffect } from "react";
+import { NavigateFunction, useNavigate } from "react-router";
 import { ProductType } from "../types/types";
 
 function ItemContent(
@@ -31,7 +33,7 @@ function ItemContent(
       index?: number;
       setItemList?: React.Dispatch<React.SetStateAction<ProductType[]>>;
    } = props;
-
+   const navigater: NavigateFunction = useNavigate();
    const addBucket = () => {
       let getBucket: ProductType[] = JSON.parse(localStorage.getItem("bucket") as string);
       if (getBucket) {
@@ -55,6 +57,11 @@ function ItemContent(
             : "해당 제품을 장바구니에서 제거했습니다."
       );
    };
+
+   const goToDetailPage = () => {
+      navigater("detail", { state: { prefix } });
+   };
+
    return (
       <>
          <div
@@ -64,7 +71,6 @@ function ItemContent(
                margin-right: 10px;
                margin-bottom: 10px;
                width: 18%;
-
                display: flex;
                min-height: 45%;
                max-height: 50%;
@@ -157,14 +163,24 @@ function ItemContent(
                   </button>
                </>
             ) : (
-               <button
-                  onClick={addBucket}
-                  css={css`
-                     font-size: 0.9rem;
-                  `}
-               >
-                  장바구니 추가
-               </button>
+               <>
+                  <button
+                     onClick={addBucket}
+                     css={css`
+                        font-size: 0.9rem;
+                     `}
+                  >
+                     장바구니 추가
+                  </button>
+                  <button
+                     onClick={goToDetailPage}
+                     css={css`
+                        font-size: 0.9rem;
+                     `}
+                  >
+                     상새페이지
+                  </button>
+               </>
             )}
          </div>
       </>
