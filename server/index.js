@@ -5,7 +5,6 @@ const port = process.env.PORT || 2000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-//이미지 파일이 불러지는 위치를 체인지
 
 app.get("/api", (req, res) => {
   res.send("hello mysql and node.ddjs Express");
