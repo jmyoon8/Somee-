@@ -7,14 +7,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/api", (req, res) => {
-  res.send("hello mysql and node.ddjs Express");
+  res.send("hello im express");
 });
 
 // 프로덕션 모드
 if (process.env.NODE_ENV === "production") {
   //프로덕션일 경우 해로쿠가 하단에 build 폴더를 보도록 한다.asd
   app.use(express.static("client/build"));
-  //랜더링될 html 파일을 지정한다ㅇ
+  //랜더링될 html 파일을 지정한다
   app.get("*", (req, res) => {
     res.sendFile(path.resolve(__dirname, "../client", "build", "index.html"));
   });
