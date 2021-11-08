@@ -14,6 +14,8 @@
       "@types/node": "^12.20.36",
       "@types/react": "^17.0.34",
       "@types/react-dom": "^17.0.11",
+      "@types/react-html-parser": "^2.0.2",
+      "@types/redux-logger": "^3.0.9",
       "@types/uuid": "^8.3.1",
       "axios": "^0.24.0",
       "express": "^4.17.1",
@@ -54,10 +56,5 @@
          "last 1 firefox version",
          "last 1 safari version"
       ]
-   },
-   "devDependencies": {
-      "@types/react-html-parser": "^2.0.2",
-      "@types/redux-logger": "^3.0.9",
-      "@types/redux-promise": "^0.5.29"
    }
 }
