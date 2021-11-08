@@ -8,7 +8,7 @@ app.use(express.urlencoded({ extended: true }));
 //이미지 파일이 불러지는 위치를 체인지
 
 app.get("/api", (req, res) => {
-  res.send("hello mysql and node.js Express");
+  res.send("hello mysql and node.ddjs Express");
 });
 
 // 프로덕션 모드
