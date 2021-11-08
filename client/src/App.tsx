@@ -13,10 +13,10 @@ import {
    BrowserRouter,
 } from "react-router-dom";
 import "./Css.css";
-import ItemList from "./ItemList/itemListScreens/ItemList";
+import ItemList from "./itemList/itemListScreens/ItemList";
 import SideBar from "./Main/SideBar";
 import Header from "./Main/Header";
-import ItemDetail from "./ItemList/itemListComponents/ItemDetail";
+import ItemDetail from "./itemList/itemListComponents/ItemDetail";
 
 const App = () => {
    return (

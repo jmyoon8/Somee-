@@ -1,4 +1,4 @@
-import { Categorys } from "../ItemList/types/types";
+import { Categorys } from "../itemList/types/types";
 import { ApiInstance } from "../utils/AxiosInstance";
 import { GET_CATEGORY_ITEMS } from "./actionTypes";
 

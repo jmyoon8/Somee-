@@ -17,7 +17,7 @@ const Header = () => {
                color: #4b4453;
             `}
          >
-            소비의 미학 과제
+            소비의 미학
          </div>
       </header>
    );
